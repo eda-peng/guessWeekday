@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>猜星期幾遊戲</title>
+<style>
+    body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+
+    canvas {
+        border: 1px solid black;
+    }
+
+    #pixi-container {
+        position: relative;
+        /* width: 800px; */
+        /* height: 350px; */
+    }
+
+    #answer-input {
+        position: absolute;
+        left: 450px;
+        top: 300px;
+        /* transform: translateX(-50%); */
+        font-size: 20px;
+        padding: 6px 12px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        width: 340px;
+    }
+</style>
+</head>
+
+<body>
+    <div id="app">
+        <div id="pixi-container">
+            <!-- 輸入框 -->
+            <input id="answer-input" type="text" placeholder="請輸入星期幾" />
+            <!-- 選擇時間 -->
+            <label for="time-select" style="position: absolute; left: 260px; top: 30px; font-size: 16px;">選擇時間：</label>
+            <select id="time-select" style="position: absolute; left: 340px; top: 30px; font-size: 16px; padding: 4px;">
+                <option value="30">30秒</option>
+                <option value="60" selected>60秒</option>
+                <option value="90">90秒</option>
+            </select>
+            <!-- 日期範圍radio -->
+            <div id="date-range-group" style="position: absolute; left: 420px; top: 35px; font-size: 14px; color: black;">
+                <label><input type="radio" name="date-range" value="1900-2100-5" checked> 1900-2100</label>
+                <label style="margin-left: 10px;"><input type="radio" name="date-range" value="2000-2040-3"> 2000-2040</label>
+                <label style="margin-left: 10px;"><input type="radio" name="date-range" value="2020-2030-2"> 2020–2030</label>
+                <label style="margin-left: 10px;"><input type="radio" name="date-range" value="2025-2025-1"> 2025</label>
+            </div>
+            <!-- 顯示答案checkbox -->
+            <label style="position: absolute; left: 800px; top: 35px; font-size: 16px; color: black;">
+                <input type="checkbox" id="show-answer-checkbox"> 顯示答案
+            </label>
+        </div>
+    <!-- <script type="module" src="/src/main.ts"></script> -->
+    <script type="module" src="main.ts"></script>
+</body>
+</html>
